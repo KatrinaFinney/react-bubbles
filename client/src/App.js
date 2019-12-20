@@ -9,15 +9,7 @@ function App() {
   return (
      <Router>
       <div className="App">
-        <ul>
-          <li>
-            <button class="ui primary button"Link to="/login">Login</button>
-          </li>
-          <br/>
-          <li>
-            <button class="ui button" Link to="/protected">Bubbles</button>
-          </li>
-        </ul>
+      
         <Switch>
           <PrivateRoute path="/protected" component={BubblePage} />
           <Route path="/login" component={Login} />

@@ -37,21 +37,27 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-      Bubbles
-        <form onSubmit={this.login}>
+      <div class="ui huge header">Bubbles Login</div>
+        <form class=" ui form" onSubmit={this.login}>
+          <div class="field">
           <input
             type="text"
             name="username"
+            placeholder="enter your username"
             value={this.state.credentials.username}
             onChange={this.handleChange}
           />
+          </div>
+          <div class="field">
           <input
             type="password"
             name="password"
+            placeholder="enter your password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
-          <button>Log in</button>
+          </div>
+          <button class="ui secondary button">Log in</button>
           {this.state.isFetching && 'logging in'}
         </form>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import axios from "axios";
 import { axiosWithAuth } from '../utils/axioswithAuth';
 
@@ -24,8 +25,12 @@ const BubblePage = props => {
 
   return (
     <>
+
       <ColorList colors={colorList} updateColors={setColorList} />
       <Bubbles colors={colorList} />
+
+      
+      <Link to="/Login">Login </Link>
     </>
   );
 };
