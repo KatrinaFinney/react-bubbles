@@ -25,17 +25,17 @@ const ColorList = ({ colors, updateColors }) => {
   const colorChangeHandler = e => {
     setColorToEdit({ ...colorToEdit, color: e.target.value });
   };
-
-  const addColorChangeHandler = e => {
-    setNewColor({ ...newColor, color: e.target.value });
-  };
-
-  const hexChangeHandler = e => {
+   const hexChangeHandler = e => {
     setColorToEdit({
       ...colorToEdit,
       code: { hex: e.target.value }
     });
   };
+
+  const addColorChangeHandler = e => {
+    setNewColor({ ...newColor, color: e.target.value });
+  };
+
 
   const addHexChangeHandler = e => {
     setNewColor({
@@ -69,10 +69,10 @@ const ColorList = ({ colors, updateColors }) => {
     console.log("color: ", color);
     axios()
       .post("/colors", color)
-      .then(res => console.log("Success. This is your new color: ", newColor))
+      .then(res => console.log("You changed the color! ", newColor))
       .catch(err => console.log(err));
 
-    // colorUpdate();
+    
   };
 
   function colorUpdate() {
@@ -84,7 +84,7 @@ const ColorList = ({ colors, updateColors }) => {
     }, 100);
   }
 
-  console.log("colors: ", newColor);
+
   return (
     <div className="colors-wrap">
       <p>Let's play with Color</p>
